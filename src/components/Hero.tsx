@@ -88,25 +88,23 @@ export default function Hero() {
           </p>
         </div>
 
-        {/* Bottoni in perfetto stile Lovable */}
-<div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row z-10">
-  {/* Primo bottone: Sfumatura ad angolazione specifica, font bilanciato e testo ridotto */}
+       {/* Bottoni Inferiori */}
+<div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
   <a
     href="#apply"
-    className="inline-flex items-center gap-2 rounded-full bg-gradient-to-br from-[#6d8cff] to-[#b06cf7] px-6 py-2.5 text-[13px] font-medium tracking-wide text-white transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]"
+    className="btn-grad inline-flex items-center gap-2 rounded-xl px-7 py-3.5 text-[16px] font-semibold"
   >
     Apply for Funding
-    <ArrowRight size={14} className="opacity-90" />
+    <ArrowRight size={18} />
   </a>
-
-  {/* Secondo bottone: Effetto vetro semitrasparente (glass), bordo sottile scuro e font leggero */}
   <a
     href="#how-we-evaluate"
-    className="inline-flex items-center rounded-full border border-zinc-800/80 bg-zinc-900/40 px-6 py-2.5 text-[13px] font-medium tracking-wide text-zinc-400 backdrop-blur-sm transition-colors duration-200 hover:bg-zinc-800/60 hover:text-zinc-200"
+    className="btn-ghost inline-flex items-center rounded-xl px-7 py-3.5 text-[16px] font-medium"
   >
     How We Evaluate
   </a>
 </div>
+
 
         {/* Render dell'immagine Orb con il nuovo percorso */}
         <Orb />
