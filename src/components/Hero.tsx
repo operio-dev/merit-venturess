@@ -58,7 +58,7 @@ function Orb() {
   );
 }
 
-// Esportazione nominativa ordinaria allineata con l'import { Hero } in App.tsx
+// CORRETTO: Cambiato in export ordinario (senza default) per allinearsi all'import { Hero } in App.tsx
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pt-36 pb-24 sm:pt-44 sm:pb-32">
@@ -86,7 +86,6 @@ export function Hero() {
           </p>
         </div>
 
-        {/* Bottoni Inferiori legati alle classi CSS btn-grad e btn-ghost modificate nel file index.css */}
         <div className="relative z-20 mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <a href="#apply" className="btn-grad inline-flex items-center gap-2">
             Apply for Funding
