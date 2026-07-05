@@ -73,20 +73,18 @@ export default function Hero() {
         </div>
 
         <h1 className="font-display text-4xl font-semibold leading-[1.05] tracking-tight text-[#e6ebf4] sm:text-6xl md:text-[68px]">
-          A venture fund built to price execution –{" "}
-<span className="grad-text">not pedigree, network, or narrative.</span>
-        </h1>
+  A venture fund built to price execution –{" "}
+  <span className="grad-text">not pedigree, network, or narrative.</span>
+</h1>
 
-        <div className="mx-auto mt-8 max-w-xl space-y-1 font-serif text-lg italic text-muted sm:text-xl">
-          <p>Early-stage capital is still allocated through signal noise: prestige, proximity, and storytelling.</p>
-          <p>We remove those variables entirely from the investment decision.</p>
-          <p className="text-[#cfd6e2]">
-            We invest where execution is observable, compounding, and independent of network access.
+<div className="mx-auto mt-8 max-w-xl space-y-1 font-serif text-lg italic text-muted sm:text-xl">
+  <p>Early-stage capital is still allocated through signal noise: prestige, proximity, and storytelling.</p>
+  <p>We remove those variables entirely from the investment decision.</p>
+  <p className="text-[#cfd6e2]">
+    We invest where execution is observable, compounding, and independent of network access.
   </p>
-
 </div>
-          </p>
-        </div>
+
 
         <div className="relative z-20 mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <a href="#apply" className="btn-grad inline-flex items-center gap-2">
