@@ -58,7 +58,7 @@ function Orb() {
   );
 }
 
-// CORRETTO: Ripristinato l'export default richiesto dal compilatore TypeScript per allinearsi ad App.tsx
+// CORRETTO: Aggiunto 'default' per risolvere l'errore di compilazione e allinearsi ad App.tsx
 export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pt-36 pb-24 sm:pt-44 sm:pb-32">
