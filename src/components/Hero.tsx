@@ -58,16 +58,13 @@ function Orb() {
   );
 }
 
-// Ripristinato 'export default' per agganciare correttamente l'import di App.tsx
 export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pt-36 pb-24 sm:pt-44 sm:pb-32">
       <Particles />
 
-      {/* Ridotto da max-w-5xl a max-w-4xl come Lovable */}
       <div className="relative mx-auto max-w-4xl px-5 text-center">
         
-        {/* Ridotto il margine inferiore da mb-9 a mb-7 */}
         <div className="mb-7 flex justify-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-line bg-panel/70 px-4 py-1.5 text-xs text-[#c4ccd9]">
             <Sparkles size={14} className="text-accent" />
@@ -75,13 +72,11 @@ export default function Hero() {
           </span>
         </div>
 
-        {/* Modificate le classi del titolo per renderlo compatto e leggero come Lovable */}
         <h1 className="font-display text-4xl font-semibold leading-[1.05] tracking-tight text-[#e6ebf4] sm:text-6xl md:text-[68px]">
           The first Venture Capital built for founders—
           <span className="grad-text">not their networks.</span>
         </h1>
 
-        {/* Modificato max-w-2xl in max-w-xl e ridotto il font a sm:text-xl */}
         <div className="mx-auto mt-8 max-w-xl space-y-1 font-serif text-lg italic text-muted sm:text-xl">
           <p>We don't care where you studied.</p>
           <p>We don't care who introduced you.</p>
@@ -90,7 +85,6 @@ export default function Hero() {
           </p>
         </div>
 
-        {/* Bottoni Inferiori agganciati alle regole del file index.css */}
         <div className="relative z-20 mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <a href="#apply" className="btn-grad inline-flex items-center gap-2">
             Apply for Funding
