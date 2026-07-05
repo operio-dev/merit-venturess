@@ -13,6 +13,14 @@
   --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Instrument Serif", Georgia, serif;
+  
+  /* Configurazione animazione per Tailwind v4 */
+  --animate-float-slow: float-slow 6s ease-in-out infinite;
+
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
 }
 
 html {
@@ -134,12 +142,28 @@ section[id] {
   50% { opacity: 0.7; transform: translateY(-10px); }
 }
 
-/* ---------- orb glow + fallback ---------- */
+/* ---------- orb glow + fallback (Potenziato stile Lovable) ---------- */
+
+.orb-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .orb-glow {
-  background:
-    radial-gradient(closest-side, rgba(124, 96, 255, 0.28), transparent 70%),
-    radial-gradient(closest-side, rgba(66, 108, 255, 0.18), transparent 75%);
+  position: absolute;
+  inset: -60px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(109, 140, 255, 0.45) 0%, rgba(176, 108, 247, 0.25) 50%, transparent 72%);
+  filter: blur(45px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.orb-image {
+  position: relative;
+  z-index: 2;
 }
 
 .orb-fallback {
