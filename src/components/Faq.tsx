@@ -11,11 +11,11 @@ const FAQS = [
   },
   {
     q: "Do I need an Ivy League degree?",
-    a: "No. We don't look at where you studied. We look at what you've built and whether people use it.",
+    a: "No. Where you studied has no bearing on our decision.",
   },
   {
     q: "Do I need previous exits?",
-    a: "No. Past exits are nice, but they're not evidence that your current product works. Traction is.",
+    a: "No. First-time founders are just as welcome as repeat founders.",
   },
   {
     q: "Can solo founders apply?",
@@ -23,7 +23,7 @@ const FAQS = [
   },
   {
     q: "What matters most?",
-    a: "Evidence of validation: a working product, real users, and measurable signals that people want what you're building.",
+    a: "Evidence that customers genuinely value what you're building: a working product, real users, and measurable signals that people want what you're building.",
   },
 ];
 
