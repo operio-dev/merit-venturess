@@ -32,7 +32,7 @@ export default function WhyWeExist() {
           <Reveal delay={100}>
             <p>
               Reviewing thousands of startups is genuinely hard. So the industry
-              built shortcuts—pedigree and connections became convenient stand-ins
+              built shortcuts: pedigree and connections became convenient stand-ins
               for potential.
             </p>
           </Reveal>
@@ -48,7 +48,7 @@ export default function WhyWeExist() {
           <Reveal delay={140}>
             <p>
               Modern technology changes that. We can measure real execution
-              directly—so{" "}
+              directly so that{" "}
               <span className="text-white font-medium">
                 execution matters more than introductions.
               </span>
