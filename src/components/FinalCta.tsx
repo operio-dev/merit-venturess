@@ -1,11 +1,10 @@
 import { useState, type FormEvent } from "react";
-import { ArrowRight, Twitter, Linkedin, Github } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Reveal from "./Reveal";
 
 export function Logo() {
   return (
     <a href="#top" className="flex items-center gap-2.5">
-      {/* Rimossa la M come richiesto, font a 15px come Lovable */}
       <span className="font-display text-[15px] font-semibold tracking-tight text-fg">
         Merit Ventures
       </span>
@@ -26,8 +25,10 @@ function Newsletter() {
   return (
     <div className="max-w-sm">
       <p className="font-display text-[15px] font-medium text-fg">Stay in the loop</p>
-      <p className="mt-1.5 text-sm text-muted">Occasional notes on merit-based investing.</p>
-      
+      <p className="mt-1.5 text-sm text-muted">
+        Occasional notes on merit-based investing.
+      </p>
+
       <form onSubmit={onSubmit} className="mt-4 flex flex-col gap-2.5 sm:flex-row">
         <input
           type="email"
@@ -38,6 +39,7 @@ function Newsletter() {
           className="w-full rounded-full border border-line bg-panel px-4 py-2 text-sm text-fg placeholder:text-muted-2 focus:border-[rgba(76,141,255,0.4)] focus:outline-none sm:max-w-[240px]"
           aria-label="Email address"
         />
+
         <button
           type="submit"
           className="btn-grad shrink-0 rounded-full px-5 py-2 text-sm font-medium transition-colors"
@@ -52,17 +54,18 @@ function Newsletter() {
 export default function FinalCta() {
   return (
     <>
-      {/* Sezione Apply CTA proporzionata come Lovable */}
+      {/* CTA */}
       <section id="apply" className="relative py-24 sm:py-32 text-center overflow-hidden">
         <div className="mx-auto max-w-4xl px-5">
           <Reveal>
             <h2 className="font-display text-3xl font-semibold leading-tight tracking-tight text-[#e6ebf4] sm:text-5xl max-w-2xl mx-auto">
               Build something people want. We'll notice.
             </h2>
+
             <p className="mx-auto mt-5 max-w-lg text-lg text-muted">
               No intro. No pedigree. Just your work and the evidence behind it.
             </p>
-            {/* Bottone arrotondato a cerchio e testo più leggero */}
+
             <div className="mt-9 flex justify-center">
               <a
                 href="mailto:apply@meritventures.com"
@@ -76,31 +79,29 @@ export default function FinalCta() {
         </div>
       </section>
 
-      {/* Footer Griglia completo */}
+      {/* Footer */}
       <footer className="relative border-t border-line">
         <div className="mx-auto max-w-6xl px-5 pb-14">
           <div className="grid gap-10 border-t border-line pt-14 md:grid-cols-[1.4fr_1fr]">
+            
             <div className="max-w-sm text-left">
               <Logo />
+
               <p className="mt-4 font-serif text-lg italic leading-relaxed text-muted">
                 We invest in execution, not pedigree—building the world's most meritocratic
                 venture capital platform.
               </p>
-              
-              {/* Icone Social con le dimensioni esatte di Lovable (size-4 = 16px) */}
+
+              {/* Social icons SAFE (no lucide issues) */}
               <div className="mt-6 flex gap-2">
-                {[
-                  { Icon: Twitter, href: "#" },
-                  { Icon: Linkedin, href: "#" },
-                  { Icon: Github, href: "#" },
-                ].map(({ Icon, href }, i) => (
+                {["T", "L", "G"].map((label, i) => (
                   <a
                     key={i}
-                    href={href}
+                    href="#"
                     aria-label="Social link"
-                    className="border border-line bg-zinc-900/40 backdrop-blur-sm grid size-10 place-items-center rounded-xl text-muted hover:text-fg transition-colors duration-200"
+                    className="border border-line bg-zinc-900/40 backdrop-blur-sm grid size-10 place-items-center rounded-xl text-muted hover:text-fg transition-colors"
                   >
-                    <Icon size={16} />
+                    <span className="text-xs font-medium">{label}</span>
                   </a>
                 ))}
               </div>
@@ -111,13 +112,13 @@ export default function FinalCta() {
             </div>
           </div>
 
-          {/* Barra dei diritti e link aggiuntivi presi dall'ultimo blocco Lovable */}
           <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-line pt-8 text-xs text-muted sm:flex-row">
             <p>© {new Date().getFullYear()} Merit Ventures. All rights reserved.</p>
+
             <div className="flex gap-6">
-              <a href="#" className="transition-colors hover:text-fg">Privacy</a>
-              <a href="#" className="transition-colors hover:text-fg">Terms</a>
-              <a href="#faq" className="transition-colors hover:text-fg">FAQ</a>
+              <a href="#" className="hover:text-fg">Privacy</a>
+              <a href="#" className="hover:text-fg">Terms</a>
+              <a href="#faq" className="hover:text-fg">FAQ</a>
             </div>
           </div>
         </div>
