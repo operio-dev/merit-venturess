@@ -39,20 +39,25 @@ function Orb() {
   const [imgOk, setImgOk] = useState(true);
 
   return (
-    <div className="relative mx-auto mt-16 flex max-w-3xl items-center justify-center">
-      <div aria-hidden className="orb-glow absolute -inset-24 opacity-35" />
-      {imgOk ? (
-        <img
-          src="/heroorb.png"
-          alt="Abstract execution-driven intelligence visualization"
-          aria-hidden
-          onError={() => setImgOk(false)}
-          className="relative h-auto w-[min(520px,80vw)] select-none drop-shadow-2xl"
-          draggable={false}
-        />
-      ) : (
-        <div aria-hidden className="orb-fallback relative h-[320px] w-[320px] md:h-[480px] md:w-[480px]" />
-      )}
+    <div className="relative mx-auto mt-16 flex max-w-3xl justify-center px-6 pointer-events-none select-none">
+      {/* Movimento oscillante attivato tramite classe CSS */}
+      <div className="animate-float-slow orb-container">
+        
+        {/* L'alone di luce soffusa configurato nel CSS */}
+        <div aria-hidden className="orb-glow" />
+        
+        {imgOk ? (
+          <img
+            src="/heroorb.png"
+            alt="Abstract execution-driven intelligence visualization"
+            onError={() => setImgOk(false)}
+            className="h-auto w-[min(520px,80vw)] drop-shadow-2xl orb-image"
+            draggable={false}
+          />
+        ) : (
+          <div aria-hidden className="orb-fallback relative h-[320px] w-[320px] md:h-[480px] md:w-[480px]" />
+        )}
+      </div>
     </div>
   );
 }
@@ -62,10 +67,8 @@ export default function Hero() {
     <section id="top" className="relative overflow-hidden pt-36 pb-24 sm:pt-44 sm:pb-32">
       <Particles />
 
-      {/* Ridotto max-w da 5xl a 4xl come Lovable */}
       <div className="relative mx-auto max-w-4xl px-5 text-center">
         
-        {/* Badge superiore con margini ridotti */}
         <div className="mb-7 flex justify-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-line bg-panel/70 px-4 py-1.5 text-xs text-[#c4ccd9]">
             <Sparkles size={14} className="text-accent" />
@@ -73,13 +76,11 @@ export default function Hero() {
           </span>
         </div>
 
-        {/* Titolo rimpicciolito usando le classi esatte di Lovable */}
         <h1 className="font-display text-4xl font-semibold leading-[1.05] tracking-tight text-[#e6ebf4] sm:text-6xl md:text-[68px]">
           The first Venture Capital built for founders—
           <span className="grad-text">not their networks.</span>
         </h1>
 
-        {/* Sottotitolo corsivo con max-w limitata per andare a capo identico */}
         <div className="mx-auto mt-8 max-w-xl space-y-1 font-serif text-lg italic text-muted sm:text-xl">
           <p>We don't care where you studied.</p>
           <p>We don't care who introduced you.</p>
@@ -88,25 +89,23 @@ export default function Hero() {
           </p>
         </div>
 
-       {/* Bottoni Inferiori */}
-<div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-  <a
-    href="#apply"
-    className="btn-grad inline-flex items-center gap-2 rounded-xl px-7 py-3.5 text-[16px] font-semibold"
-  >
-    Apply for Funding
-    <ArrowRight size={18} />
-  </a>
-  <a
-    href="#how-we-evaluate"
-    className="btn-ghost inline-flex items-center rounded-xl px-7 py-3.5 text-[16px] font-medium"
-  >
-    How We Evaluate
-  </a>
-</div>
+        {/* Bottoni Inferiori in perfetto stile Lovable */}
+        <div className="relative z-20 mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <a
+            href="#apply"
+            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-br from-[#6d8cff] to-[#b06cf7] px-6 py-2.5 text-[13px] font-medium tracking-wide text-white transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]"
+          >
+            Apply for Funding
+            <ArrowRight size={14} className="opacity-90" />
+          </a>
+          <a
+            href="#how-we-evaluate"
+            className="inline-flex items-center rounded-full border border-zinc-800/80 bg-zinc-900/40 px-6 py-2.5 text-[13px] font-medium tracking-wide text-zinc-400 backdrop-blur-sm transition-colors duration-200 hover:bg-zinc-800/60 hover:text-zinc-200"
+          >
+            How We Evaluate
+          </a>
+        </div>
 
-
-        {/* Render dell'immagine Orb con il nuovo percorso */}
         <Orb />
       </div>
     </section>
