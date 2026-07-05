@@ -12,16 +12,13 @@ const LINKS = [
 export function Logo() {
   return (
     <a href="#top" className="flex items-center gap-3">
-      <span
-        className="flex h-9 w-9 items-center justify-center rounded-full text-sm font-semibold text-white"
-        style={{ background: "linear-gradient(135deg, #6d8cff, #b06cf7)" }}
-      
       <span className="font-display text-[17px] font-semibold tracking-tight text-fg">
         Merit Ventures
       </span>
     </a>
   );
 }
+
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
