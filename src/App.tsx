@@ -1,6 +1,6 @@
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero"; // Senza parentesi graffe
-import WhyWeExist from "./components/WhyWeExist"; // Senza parentesi graffe
+import { Hero } from "./components/Hero"; // Modificato: aggiunte le parentesi graffe
+import WhyWeExist from "./components/WhyWeExist";
 import Principles from "./components/Principles";
 import WhatWeLookFor from "./components/WhatWeLookFor";
 import HowWeEvaluate from "./components/HowWeEvaluate";
