@@ -73,15 +73,18 @@ export default function Hero() {
         </div>
 
         <h1 className="font-display text-4xl font-semibold leading-[1.05] tracking-tight text-[#e6ebf4] sm:text-6xl md:text-[68px]">
-          The first Venture Capital built for founders –{" "}
-<span className="grad-text">not their networks.</span>
+          A venture fund built to price execution –{" "}
+<span className="grad-text">not pedigree, network, or narrative.</span>
         </h1>
 
         <div className="mx-auto mt-8 max-w-xl space-y-1 font-serif text-lg italic text-muted sm:text-xl">
-          <p>We don't care where you studied.</p>
-          <p>We don't care who introduced you.</p>
+          <p>Early-stage capital is still allocated through signal noise: prestige, proximity, and storytelling.</p>
+          <p>We remove those variables entirely from the investment decision.</p>
           <p className="text-[#cfd6e2]">
-            We care about one thing: can you build something people truly want?
+            We invest where execution is observable, compounding, and independent of network access.
+  </p>
+
+</div>
           </p>
         </div>
 
