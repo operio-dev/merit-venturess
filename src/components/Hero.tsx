@@ -40,12 +40,8 @@ function Orb() {
 
   return (
     <div className="relative mx-auto mt-16 flex max-w-3xl justify-center px-6 pointer-events-none select-none">
-      {/* Movimento oscillante attivato tramite classe CSS */}
       <div className="animate-float-slow orb-container">
-        
-        {/* L'alone di luce soffusa configurato nel CSS */}
         <div aria-hidden className="orb-glow" />
-        
         {imgOk ? (
           <img
             src="/heroorb.png"
@@ -62,6 +58,7 @@ function Orb() {
   );
 }
 
+// Cambiato in export default per correggere l'errore TS2613
 export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pt-36 pb-24 sm:pt-44 sm:pb-32">
@@ -89,19 +86,13 @@ export default function Hero() {
           </p>
         </div>
 
-        {/* Bottoni Inferiori in perfetto stile Lovable */}
+        {/* Bottoni Inferiori legati alle classi CSS btn-grad e btn-ghost modificate */}
         <div className="relative z-20 mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <a
-            href="#apply"
-            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-br from-[#6d8cff] to-[#b06cf7] px-6 py-2.5 text-[13px] font-medium tracking-wide text-white transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]"
-          >
+          <a href="#apply" className="btn-grad inline-flex items-center gap-2">
             Apply for Funding
             <ArrowRight size={14} className="opacity-90" />
           </a>
-          <a
-            href="#how-we-evaluate"
-            className="inline-flex items-center rounded-full border border-zinc-800/80 bg-zinc-900/40 px-6 py-2.5 text-[13px] font-medium tracking-wide text-zinc-400 backdrop-blur-sm transition-colors duration-200 hover:bg-zinc-800/60 hover:text-zinc-200"
-          >
+          <a href="#how-we-evaluate" className="btn-ghost inline-flex items-center">
             How We Evaluate
           </a>
         </div>
