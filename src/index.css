@@ -63,27 +63,41 @@ section[id] {
   color: transparent;
 }
 
+/* MODIFICATO: Bottone Sfumato in Stile Lovable (Testo leggero, più piccolo e spaziato) */
 .btn-grad {
-  background: linear-gradient(92deg, #8fb0fe 0%, #c48ffb 55%, #e37afa 100%);
-  color: #0a0d16;
-  box-shadow: 0 0 32px rgba(150, 130, 250, 0.35);
+  background: linear-gradient(135deg, #6d8cff, #b06cf7);
+  color: #ffffff !important;
+  font-size: 13px !important;
+  font-weight: 500 !important; /* Rimosso il grassetto pesante */
+  letter-spacing: 0.05em !important; /* Aggiunto più spazio tra le lettere */
+  padding: 10px 24px !important;
+  border-radius: 999px !important; /* Arrotondato perfetto */
+  box-shadow: 0 0 32px rgba(150, 130, 250, 0.2);
   transition: box-shadow 0.25s ease, transform 0.25s ease, filter 0.25s ease;
 }
 .btn-grad:hover {
   filter: brightness(1.06);
-  box-shadow: 0 0 44px rgba(160, 130, 250, 0.5);
+  box-shadow: 0 0 44px rgba(160, 130, 250, 0.4);
   transform: translateY(-1px);
 }
 
+/* MODIFICATO: Bottone Vuoto/Trasparente in Stile Lovable */
 .btn-ghost {
-  background: #10151f;
-  border: 1px solid var(--color-line);
-  color: var(--color-fg);
-  transition: background 0.25s ease, border-color 0.25s ease;
+  background: rgba(21, 27, 40, 0.4) !important;
+  backdrop-blur: 4px;
+  border: 1px solid rgba(148, 163, 184, 0.15) !important;
+  color: var(--color-muted) !important;
+  font-size: 13px !important;
+  font-weight: 500 !important; /* Rimosso il grassetto */
+  letter-spacing: 0.05em !important; /* Più spazio tra le lettere */
+  padding: 10px 24px !important;
+  border-radius: 999px !important;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
 }
 .btn-ghost:hover {
-  background: #151b28;
-  border-color: rgba(148, 163, 184, 0.28);
+  background: rgba(21, 27, 40, 0.7) !important;
+  border-color: rgba(148, 163, 184, 0.3) !important;
+  color: var(--color-fg) !important;
 }
 
 .card {
@@ -153,12 +167,9 @@ section[id] {
 
 .orb-glow {
   position: absolute;
-  /* Ridotto da -120px a -65px e spostato verso l'alto con un margine negativo inferiore */
   inset: -65px -65px -10px -65px;
   border-radius: 999px;
-  /* Gradiente compattato al 70% per sfumare in modo più netto e morire prima del fondo */
   background: radial-gradient(circle at center 45%, rgba(109, 140, 255, 0.45) 0%, rgba(176, 108, 247, 0.25) 45%, transparent 70%);
-  /* Sfocatura ridotta a 55px per non disperdere la luce fuori dai bordi inferiori */
   filter: blur(55px);
   pointer-events: none;
   z-index: 1;
