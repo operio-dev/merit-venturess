@@ -58,8 +58,8 @@ function Orb() {
   );
 }
 
-// Cambiato in export default per correggere l'errore TS2613
-export default function Hero() {
+// Cambiato in export ordinario con nome, eliminando il default
+export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pt-36 pb-24 sm:pt-44 sm:pb-32">
       <Particles />
