@@ -1,5 +1,5 @@
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero"; // Ripristinato senza parentesi graffe
+import Hero from "./components/Hero";
 import WhyWeExist from "./components/WhyWeExist";
 import Principles from "./components/Principles";
 import WhatWeLookFor from "./components/WhatWeLookFor";
