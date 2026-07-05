@@ -15,9 +15,7 @@ export function Logo() {
       <span
         className="flex h-9 w-9 items-center justify-center rounded-full text-sm font-semibold text-white"
         style={{ background: "linear-gradient(135deg, #6d8cff, #b06cf7)" }}
-      >
-        M
-      </span>
+      
       <span className="font-display text-[17px] font-semibold tracking-tight text-fg">
         Merit Ventures
       </span>
