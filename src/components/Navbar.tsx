@@ -11,74 +11,80 @@ const LINKS = [
 
 export function Logo() {
   return (
-    <a href="#top" className="flex items-center gap-3">
-      <span className="font-display text-[17px] font-semibold tracking-tight text-fg">
+    <a href="#top" className="flex items-center gap-2.5">
+      {/* Testo del logo rimpicciolito da 17px a 15px come Lovable */}
+      <span className="font-display text-[15px] font-semibold tracking-tight text-fg">
         Merit Ventures
       </span>
     </a>
   );
 }
 
-
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled ? "border-b border-line bg-ink/80 backdrop-blur-md" : "bg-transparent"
-      }`}
-    >
-      <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 lg:px-8">
+    // Struttura flessibile con pt-4 per distanziarla dall'alto come Lovable
+    <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4">
+      <nav
+        className={`flex w-full max-w-6xl items-center justify-between rounded-2xl px-4 py-3 transition-all duration-500 sm:px-5 ${
+          scrolled 
+            ? "border border-line bg-ink/80 backdrop-blur-md shadow-lg" 
+            : "border border-transparent bg-transparent"
+        }`}
+      >
         <Logo />
 
-        <nav className="hidden items-center gap-8 lg:flex">
+        {/* Links della Navbar ridotti da 15px a text-sm (14px) e alleggeriti */}
+        <div className="hidden items-center gap-8 lg:flex">
           {LINKS.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="text-[15px] text-muted transition-colors hover:text-fg"
+              className="text-sm text-muted font-normal transition-colors hover:text-fg"
             >
               {l.label}
             </a>
           ))}
-        </nav>
+        </div>
 
+        {/* Bottone Destro alleggerito dal font-semibold pesante di Claude */}
         <div className="hidden lg:block">
           <a
             href="#apply"
-            className="btn-grad inline-flex items-center rounded-xl px-5 py-2.5 text-[15px] font-semibold"
+            className="btn-grad inline-flex items-center rounded-xl px-4 py-2 text-sm font-medium tracking-wide"
           >
             Apply for Funding
           </a>
         </div>
 
         <button
-          className="text-fg lg:hidden"
+          className="grid h-9 w-9 place-items-center rounded-lg text-fg lg:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Close menu" : "Open menu"}
         >
-          {open ? <X size={24} /> : <Menu size={24} />}
+          {open ? <X size={20} /> : <Menu size={20} />}
         </button>
-      </div>
+      </nav>
 
+      {/* Menu Mobile */}
       {open && (
-        <div className="border-b border-line bg-ink/95 px-5 pb-6 pt-2 backdrop-blur-md lg:hidden">
-          <nav className="flex flex-col gap-4">
+        <div className="border border-line bg-ink/95 absolute inset-x-4 top-20 z-50 rounded-2xl p-4 backdrop-blur-md lg:hidden shadow-xl">
+          <div className="flex flex-col gap-1">
             {LINKS.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="text-[15px] text-muted transition-colors hover:text-fg"
+                className="rounded-lg px-3 py-2.5 text-sm text-muted transition-colors hover:bg-white/5 hover:text-fg"
               >
                 {l.label}
               </a>
@@ -86,11 +92,11 @@ export default function Navbar() {
             <a
               href="#apply"
               onClick={() => setOpen(false)}
-              className="btn-grad mt-2 inline-flex w-fit items-center rounded-xl px-5 py-2.5 text-[15px] font-semibold"
+              className="btn-grad mt-2 inline-flex w-full justify-center items-center rounded-xl px-4 py-2.5 text-sm font-medium"
             >
               Apply for Funding
             </a>
-          </nav>
+          </div>
         </div>
       )}
     </header>
