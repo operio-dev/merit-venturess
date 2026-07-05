@@ -88,7 +88,7 @@ export default function FinalCta() {
               <Logo />
 
               <p className="mt-4 font-serif text-lg italic leading-relaxed text-muted">
-                We invest in execution, not pedigree—building the world's most meritocratic
+                We invest in execution, not pedigree. Building the world's most meritocratic
                 venture capital platform.
               </p>
 
