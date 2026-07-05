@@ -1,106 +1,112 @@
-import { useMemo, useState } from "react";
+import { motion } from "motion/react";
 import { ArrowRight, Sparkles } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import heroOrb from "@/assets/hero-orb.png";
 
-function Particles({ count = 22 }: { count?: number }) {
-  const dots = useMemo(
-    () =>
-      Array.from({ length: count }, (_, i) => ({
-        id: i,
-        top: Math.random() * 100,
-        left: Math.random() * 100,
-        size: Math.random() * 3 + 1.5,
-        delay: Math.random() * 5,
-        duration: Math.random() * 4 + 4,
-      })),
-    [count]
-  );
-
+function Particles() {
+  const dots = Array.from({ length: 22 });
   return (
-    <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
-      {dots.map((d) => (
-        <span
-          key={d.id}
-          className="particle"
-          style={{
-            top: `${d.top}%`,
-            left: `${d.left}%`,
-            width: d.size,
-            height: d.size,
-            animationDelay: `${d.delay}s`,
-            animationDuration: `${d.duration}s`,
-          }}
-        />
-      ))}
+    <div className="pointer-events-none absolute inset-0 overflow-hidden">
+      {dots.map((_, i) => {
+        const left = (i * 47) % 100;
+        const top = (i * 29) % 100;
+        const delay = (i % 7) * 0.6;
+        const dur = 6 + (i % 5);
+        return (
+          <motion.span
+            key={i}
+            className="absolute h-1 w-1 rounded-full bg-primary/70"
+            style={{ left: `${left}%`, top: `${top}%` }}
+            animate={{ opacity: [0, 0.9, 0], y: [0, -22, 0] }}
+            transition={{ duration: dur, delay, repeat: Infinity, ease: "easeInOut" }}
+          />
+        );
+      })}
     </div>
   );
 }
 
-function Orb() {
-  const [imgOk, setImgOk] = useState(true);
-
+export function Hero() {
   return (
-    <div className="relative mx-auto mt-20 flex max-w-3xl items-center justify-center md:mt-24">
-      <div aria-hidden className="orb-glow absolute -inset-24" />
-      {imgOk ? (
-        <img
-          src="/orb.png"
-          alt=""
-          aria-hidden
-          onError={() => setImgOk(false)}
-          className="relative w-[320px] select-none md:w-[480px]"
-          draggable={false}
-        />
-      ) : (
-        <div aria-hidden className="orb-fallback relative h-[320px] w-[320px] md:h-[480px] md:w-[480px]" />
-      )}
-    </div>
-  );
-}
-
-export default function Hero() {
-  return (
-    <section id="top" className="relative overflow-hidden pb-10 pt-40 md:pt-48">
+    <section id="top" className="relative overflow-hidden pt-36 pb-24 sm:pt-44 sm:pb-32">
+      {/* animated gradient background */}
+      <div
+        className="animate-drift absolute inset-0 -z-10"
+        style={{ background: "var(--gradient-hero)" }}
+      />
+      <div className="grid-lines absolute inset-0 -z-10 opacity-60 [mask-image:radial-gradient(70%_60%_at_50%_0%,black,transparent)]" />
       <Particles />
 
-      <div className="relative mx-auto max-w-5xl px-5 text-center">
-        <div className="mb-9 flex justify-center">
-          <span className="inline-flex items-center gap-2.5 rounded-full border border-line bg-panel/70 px-4 py-2 text-sm text-[#c4ccd9]">
-            <Sparkles size={15} className="text-accent" />
-            We invest in execution, not pedigree
-          </span>
-        </div>
+      <div className="mx-auto max-w-4xl px-5 text-center">
+        <motion.a
+          href="#why"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="glass inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-medium text-muted-foreground"
+        >
+          <Sparkles className="size-3.5 text-primary" />
+          We invest in execution, not pedigree
+        </motion.a>
 
-        <h1 className="display text-[42px] leading-[1.06] text-[#e6ebf4] sm:text-6xl md:text-7xl">
-          The first Venture Capital built for founders,
-          <span className="grad-text">not their networks.</span>
-        </h1>
+        <motion.h1
+          initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.9, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
+          className="text-gradient mt-7 font-display text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl md:text-[68px]"
+        >
+          The first Venture Capital built for founders—
+          <span className="text-gradient-accent">not their networks.</span>
+        </motion.h1>
 
-        <div className="mx-auto mt-9 max-w-2xl space-y-1.5 font-serif text-lg italic text-muted md:text-[21px]">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.25 }}
+          className="mx-auto mt-8 max-w-xl space-y-1 font-serif text-lg italic text-muted-foreground sm:text-xl"
+        >
           <p>We don't care where you studied.</p>
           <p>We don't care who introduced you.</p>
-          <p className="text-[#cfd6e2]">
+          <p className="text-foreground">
             We care about one thing: can you build something people truly want?
           </p>
-        </div>
+        </motion.div>
 
-        <div className="mt-11 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <a
-            href="#apply"
-            className="btn-grad inline-flex items-center gap-2 rounded-xl px-7 py-3.5 text-[16px] font-semibold"
-          >
-            Apply for Funding
-            <ArrowRight size={18} />
-          </a>
-          <a
-            href="#how-we-evaluate"
-            className="btn-ghost inline-flex items-center rounded-xl px-7 py-3.5 text-[16px] font-medium"
-          >
-            How We Evaluate
-          </a>
-        </div>
-
-        <Orb />
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.4 }}
+          className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
+        >
+          <Button variant="hero" size="xl" asChild>
+            <a href="#apply">
+              Apply for Funding <ArrowRight className="size-4" />
+            </a>
+          </Button>
+          <Button variant="glass" size="xl" asChild>
+            <a href="#evaluate">How We Evaluate</a>
+          </Button>
+        </motion.div>
       </div>
+
+      {/* Floating orb visual */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.2, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+        className="relative mx-auto mt-16 flex max-w-3xl justify-center px-6"
+      >
+        <div className="animate-float-slow relative">
+          <div className="absolute inset-0 -z-10 blur-3xl" style={{ background: "var(--gradient-accent)", opacity: 0.35 }} />
+          <img
+            src={heroOrb}
+            alt="Abstract execution-driven intelligence visualization"
+            width={1280}
+            height={1280}
+            className="h-auto w-[min(520px,80vw)] select-none drop-shadow-2xl"
+          />
+        </div>
+      </motion.div>
     </section>
   );
 }
