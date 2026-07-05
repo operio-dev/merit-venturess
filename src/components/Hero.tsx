@@ -73,8 +73,8 @@ export default function Hero() {
         </div>
 
         <h1 className="font-display text-4xl font-semibold leading-[1.05] tracking-tight text-[#e6ebf4] sm:text-6xl md:text-[68px]">
-          The first Venture Capital built for founders - 
-          <span className="grad-text">not their networks.</span>
+          The first Venture Capital built for founders –{" "}
+<span className="grad-text">not their networks.</span>
         </h1>
 
         <div className="mx-auto mt-8 max-w-xl space-y-1 font-serif text-lg italic text-muted sm:text-xl">
