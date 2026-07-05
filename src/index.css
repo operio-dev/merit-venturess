@@ -142,7 +142,7 @@ section[id] {
   50% { opacity: 0.7; transform: translateY(-10px); }
 }
 
-/* ---------- orb glow + fallback (RAGGIO AMPLIATO E PIÙ ESTESO) ---------- */
+/* ---------- orb glow + fallback (BILANCIATO PER EVITARE TAGLI TRA SEZIONI) ---------- */
 
 .orb-container {
   position: relative;
@@ -153,13 +153,13 @@ section[id] {
 
 .orb-glow {
   position: absolute;
-  /* Espanso da -60px a -120px per allargare fisicamente l'area */
-  inset: -120px;
+  /* Ridotto da -120px a -65px e spostato verso l'alto con un margine negativo inferiore */
+  inset: -65px -65px -10px -65px;
   border-radius: 999px;
-  /* Aumentata l'opacità e spostata l'estensione del gradiente fino all'85% */
-  background: radial-gradient(circle, rgba(109, 140, 255, 0.55) 0%, rgba(176, 108, 247, 0.35) 45%, transparent 85%);
-  /* Incrementata la sfocatura da 45px a 75px per un effetto più soffuso e soffice */
-  filter: blur(75px);
+  /* Gradiente compattato al 70% per sfumare in modo più netto e morire prima del fondo */
+  background: radial-gradient(circle at center 45%, rgba(109, 140, 255, 0.45) 0%, rgba(176, 108, 247, 0.25) 45%, transparent 70%);
+  /* Sfocatura ridotta a 55px per non disperdere la luce fuori dai bordi inferiori */
+  filter: blur(55px);
   pointer-events: none;
   z-index: 1;
 }
