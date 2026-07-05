@@ -26,7 +26,7 @@ const STEPS = [
   {
     icon: BrainCircuit,
     title: "AI analyzes execution",
-    text: "We evaluate signal, not storytelling—data over presentation.",
+    text: "We evaluate signal, not storytelling. Data over presentation.",
   },
   {
     icon: Users,
