@@ -71,7 +71,7 @@ export default function Hero() {
         </div>
 
         <h1 className="display text-[42px] leading-[1.06] text-[#e6ebf4] sm:text-6xl md:text-7xl">
-          The first Venture Capital built for founders—
+          The first Venture Capital built for founders,
           <span className="grad-text">not their networks.</span>
         </h1>
 
