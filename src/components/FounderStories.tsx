@@ -32,35 +32,37 @@ const STORIES = [
 
 export default function FounderStories() {
   return (
-    <section id="founder-stories" className="relative py-28 md:py-36">
-      <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <Reveal>
-          <p className="eyebrow">Founder stories</p>
-          <h2 className="display mt-5 max-w-2xl text-4xl text-[#e6ebf4] sm:text-5xl">
-            Extraordinary founders exist everywhere.
-          </h2>
-        </Reveal>
+    <section id="founder-stories" className="relative py-28 sm:py-32">
+      <div className="mx-auto max-w-6xl px-5">
+        <div className="max-w-2xl">
+          <Reveal>
+            <p className="eyebrow">Founder stories</p>
+          </Reveal>
+          <Reveal delay={50}>
+            <h2 className="display mt-5 text-3xl text-[#e6ebf4] sm:text-5xl">
+              Extraordinary founders exist everywhere.
+            </h2>
+          </Reveal>
+        </div>
 
-        <div className="mt-14 grid gap-5 lg:grid-cols-3">
+        <div className="mt-14 grid gap-4 lg:grid-cols-3">
           {STORIES.map(({ quote, initials, name, role, meta, gradient }, i) => (
-            <Reveal key={name} delay={i * 90}>
-              <figure className="card flex h-full flex-col p-9">
-                <blockquote className="font-serif text-[19px] leading-relaxed text-[#dbe1ec]">
+            <Reveal key={name} delay={i * 80}>
+              <figure className="card flex h-full flex-col p-7">
+                <blockquote className="flex-1 font-serif text-lg leading-relaxed text-[#dbe1ec]">
                   &ldquo;{quote}&rdquo;
                 </blockquote>
-                <figcaption className="mt-auto border-t border-line pt-7">
-                  <div className="mt-1 flex items-center gap-4">
-                    <span
-                      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-[13px] font-semibold text-white"
-                      style={{ background: gradient }}
-                    >
-                      {initials}
-                    </span>
-                    <div>
-                      <p className="text-[15.5px] font-semibold text-fg">{name}</p>
-                      <p className="mt-0.5 text-[14px] text-muted">{role}</p>
-                      <p className="mt-1 text-[13.5px] text-accent">{meta}</p>
-                    </div>
+                <figcaption className="mt-7 flex items-center gap-3.5 border-t border-line pt-6">
+                  <span
+                    className="grid h-11 w-11 shrink-0 place-items-center rounded-full text-[13px] font-semibold text-white"
+                    style={{ background: gradient }}
+                  >
+                    {initials}
+                  </span>
+                  <div>
+                    <p className="text-sm font-semibold text-fg">{name}</p>
+                    <p className="text-xs text-muted">{role}</p>
+                    <p className="mt-0.5 text-[11px] font-medium text-accent">{meta}</p>
                   </div>
                 </figcaption>
               </figure>
