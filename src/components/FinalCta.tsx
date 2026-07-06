@@ -58,7 +58,7 @@ export default function FinalCta() {
       <section id="apply" className="relative py-24 sm:py-32 text-center overflow-hidden">
         <div className="mx-auto max-w-4xl px-5">
           <Reveal>
-            <h2 className="font-display text-3xl font-semibold leading-tight tracking-tight text-[#e6ebf4] sm:text-5xl max-w-2xl mx-auto">
+            <h2 className="text-gradient-v font-display text-3xl font-semibold leading-tight tracking-tight sm:text-5xl max-w-2xl mx-auto">
               Build something people want. We'll notice.
             </h2>
 
@@ -67,9 +67,9 @@ export default function FinalCta() {
             </p>
 
             <div className="mt-9 flex justify-center">
-              <a
-                href="mailto:apply@meritventures.com"
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-br from-[#6d8cff] to-[#b06cf7] px-6 py-2.5 text-[13px] font-medium tracking-wide text-white transition-transform duration-200 hover:scale-[1.02]"
+              
+                href="#/apply"
+                className="cta-glow inline-flex items-center gap-2 rounded-full bg-gradient-to-br from-[#6d8cff] to-[#b06cf7] px-6 py-2.5 text-[13px] font-medium tracking-wide text-white transition-transform duration-200 hover:scale-[1.02]"
               >
                 Apply for Funding
                 <ArrowRight size={14} className="opacity-90" />
