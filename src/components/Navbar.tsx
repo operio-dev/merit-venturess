@@ -11,11 +11,13 @@ const LINKS = [
 
 export function Logo() {
   return (
-    <a href="#top" className="flex items-center gap-2.5">
-      {/* Testo del logo rimpicciolito da 17px a 15px come Lovable */}
-      <span className="font-display text-[15px] font-semibold tracking-tight text-fg">
-        Merit Ventures
-      </span>
+    <a href="#top" className="flex items-center">
+      <img
+        src="/ChatGPT_Image_6_lug_2026__10_00_44-removebg-preview.png"
+        alt="Merit Ventures"
+        className="h-7 w-auto sm:h-8"
+        draggable={false}
+      />
     </a>
   );
 }
