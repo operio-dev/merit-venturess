@@ -80,6 +80,7 @@ export default function Hero() {
 <div className="mx-auto mt-8 max-w-xl space-y-1 font-serif text-lg italic text-muted sm:text-xl">
   <p>We back founders through evidence of execution. Not proximity, prestige, or introductions.</p>
   <p className="text-[#cfd6e2]">
+  Can you build something people truly want? 
   </p>
 </div>
 
