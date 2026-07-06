@@ -1,15 +1,8 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { ArrowLeft, ArrowRight, Check, Paperclip, X } from "lucide-react";
 
-// ------------------------------------------------------------------
-// CONFIG
-// 1. Crea un form su formspree.io e incolla l'ID qui sotto (es. "mqkvabcd").
-//    Finche non lo fai, il form gira in DEMO MODE: mostra la schermata di
-//    conferma ma le application NON vengono recapitate da nessuna parte.
-// 2. L'upload file richiede un piano Formspree a pagamento. Se resti sul
-//    piano free, metti ENABLE_FILE_UPLOAD a false: l'utente puo comunque
-//    incollare un link alla sua proof.
-// ------------------------------------------------------------------
+const LinkTag = "a";
+
 const FORMSPREE_ID = "YOUR_FORM_ID";
 const ENABLE_FILE_UPLOAD = true;
 
@@ -165,14 +158,14 @@ export default function ApplyPage() {
   return (
     <div className="relative min-h-screen bg-ink">
       <header className="mx-auto flex h-[72px] max-w-3xl items-center justify-between px-5">
-        
+        <LinkTag
           href="#top"
           onClick={goHome}
           className="inline-flex items-center gap-2 text-[14.5px] text-muted transition-colors hover:text-fg"
         >
           <ArrowLeft size={16} />
           Back to site
-        </a>
+        </LinkTag>
         <span className="font-display text-[16px] font-semibold tracking-tight text-fg">
           Merit Ventures
         </span>
