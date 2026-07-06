@@ -62,6 +62,37 @@ section[id] {
   background-clip: text;
   color: transparent;
 }
+/* gradiente verticale bianco→grigio per i titoli (stile Lovable) */
+.text-gradient-v {
+  background: linear-gradient(180deg, #ffffff 0%, #c3cad6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* bagliore diffuso dietro un elemento (es. il bottone finale) */
+.cta-glow {
+  position: relative;
+}
+.cta-glow::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 140%;
+  height: 200%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(109, 140, 255, 0.45) 0%,
+    rgba(176, 108, 247, 0.25) 40%,
+    transparent 70%
+  );
+  filter: blur(28px);
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: -1;
+}
 
 /* MODIFICATO: Bottone Sfumato in Stile Lovable (Testo leggero, più piccolo e spaziato) */
 .btn-grad {
