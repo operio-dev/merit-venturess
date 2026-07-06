@@ -2,13 +2,15 @@ import { useState, type FormEvent } from "react";
 import { ArrowRight } from "lucide-react";
 import Reveal from "./Reveal";
 
+const Tag = "a";
+
 export function Logo() {
   return (
-    <a href="#top" className="flex items-center gap-2.5">
+    <Tag href="#top" className="flex items-center gap-2.5">
       <span className="font-display text-[15px] font-semibold tracking-tight text-fg">
         Merit Ventures
       </span>
-    </a>
+    </Tag>
   );
 }
 
@@ -51,6 +53,24 @@ function Newsletter() {
   );
 }
 
+const SOCIALS = [
+  {
+    label: "X",
+    href: "#",
+    path: "M18.9 2.2h3.4l-7.4 8.5 8.7 11.1h-6.8l-5.3-6.9-6.1 6.9H1.9l7.9-9L1.5 2.2h7l4.8 6.3 5.6-6.3Zm-1.2 17.6h1.9L7.4 4.1H5.4l12.3 15.7Z",
+  },
+  {
+    label: "LinkedIn",
+    href: "#",
+    path: "M4.98 3.5a2.49 2.49 0 1 1 0 4.98 2.49 2.49 0 0 1 0-4.98ZM3 9.5h4v12H3v-12Zm6.5 0h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6v6.3h-4v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7h-4v-12Z",
+  },
+  {
+    label: "GitHub",
+    href: "#",
+    path: "M12 .8a11.2 11.2 0 0 0-3.5 21.8c.5.1.7-.2.7-.5v-2c-3.1.7-3.7-1.3-3.7-1.3-.5-1.3-1.2-1.6-1.2-1.6-1-.7 0-.7 0-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.4-2.5-.3-5-1.3-5-5.6 0-1.2.4-2.2 1.1-3-.1-.3-.5-1.5.1-3 0 0 .9-.3 3.1 1.1a10.6 10.6 0 0 1 5.6 0C17 5.5 18 5.8 18 5.8c.6 1.5.2 2.7.1 3 .7.8 1.1 1.8 1.1 3 0 4.3-2.6 5.3-5 5.6.4.3.7 1 .7 2v3c0 .3.2.6.7.5A11.2 11.2 0 0 0 12 .8Z",
+  },
+];
+
 export default function FinalCta() {
   return (
     <>
@@ -67,13 +87,13 @@ export default function FinalCta() {
             </p>
 
             <div className="mt-9 flex justify-center">
-              
+              <Tag
                 href="#/apply"
                 className="cta-glow inline-flex items-center gap-2 rounded-full bg-gradient-to-br from-[#6d8cff] to-[#b06cf7] px-6 py-2.5 text-[13px] font-medium tracking-wide text-white transition-transform duration-200 hover:scale-[1.02]"
               >
                 Apply for Funding
                 <ArrowRight size={14} className="opacity-90" />
-              </a>
+              </Tag>
             </div>
           </Reveal>
         </div>
@@ -94,39 +114,17 @@ export default function FinalCta() {
 
               {/* Social icons (inline SVG) */}
               <div className="mt-6 flex gap-2">
-                {[
-                  {
-                    label: "X",
-                    href: "#",
-                    path: (
-                      <path d="M18.9 2.2h3.4l-7.4 8.5 8.7 11.1h-6.8l-5.3-6.9-6.1 6.9H1.9l7.9-9L1.5 2.2h7l4.8 6.3 5.6-6.3Zm-1.2 17.6h1.9L7.4 4.1H5.4l12.3 15.7Z" />
-                    ),
-                  },
-                  {
-                    label: "LinkedIn",
-                    href: "#",
-                    path: (
-                      <path d="M4.98 3.5a2.49 2.49 0 1 1 0 4.98 2.49 2.49 0 0 1 0-4.98ZM3 9.5h4v12H3v-12Zm6.5 0h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6v6.3h-4v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7h-4v-12Z" />
-                    ),
-                  },
-                  {
-                    label: "GitHub",
-                    href: "#",
-                    path: (
-                      <path d="M12 .8a11.2 11.2 0 0 0-3.5 21.8c.5.1.7-.2.7-.5v-2c-3.1.7-3.7-1.3-3.7-1.3-.5-1.3-1.2-1.6-1.2-1.6-1-.7 0-.7 0-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.4-2.5-.3-5-1.3-5-5.6 0-1.2.4-2.2 1.1-3-.1-.3-.5-1.5.1-3 0 0 .9-.3 3.1 1.1a10.6 10.6 0 0 1 5.6 0C17 5.5 18 5.8 18 5.8c.6 1.5.2 2.7.1 3 .7.8 1.1 1.8 1.1 3 0 4.3-2.6 5.3-5 5.6.4.3.7 1 .7 2v3c0 .3.2.6.7.5A11.2 11.2 0 0 0 12 .8Z" />
-                    ),
-                  },
-                ].map(({ label, href, path }) => (
-                  
+                {SOCIALS.map(({ label, href, path }) => (
+                  <Tag
                     key={label}
                     href={href}
                     aria-label={label}
                     className="border border-line bg-zinc-900/40 backdrop-blur-sm grid size-10 place-items-center rounded-xl text-muted hover:text-fg transition-colors"
                   >
                     <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden>
-                      {path}
+                      <path d={path} />
                     </svg>
-                  </a>
+                  </Tag>
                 ))}
               </div>
             </div>
@@ -140,9 +138,9 @@ export default function FinalCta() {
             <p>© {new Date().getFullYear()} Merit Ventures. All rights reserved.</p>
 
             <div className="flex gap-6">
-              <a href="#" className="hover:text-fg">Privacy</a>
-              <a href="#" className="hover:text-fg">Terms</a>
-              <a href="#faq" className="hover:text-fg">FAQ</a>
+              <Tag href="#" className="hover:text-fg">Privacy</Tag>
+              <Tag href="#" className="hover:text-fg">Terms</Tag>
+              <Tag href="#faq" className="hover:text-fg">FAQ</Tag>
             </div>
           </div>
         </div>
