@@ -17,7 +17,7 @@ export function Logo() {
       <img
         src="/ChatGPT_Image_6_lug_2026__10_00_44-removebg-preview.png"
         alt="Merit Ventures"
-        className="h-12 w-auto sm:h-14"
+        className="h-15 w-auto sm:h-18"
         draggable={false}
       />
     </Tag>
