@@ -59,7 +59,7 @@ export default function FinalCta() {
         <div className="mx-auto max-w-4xl px-5">
           <Reveal>
             <h2 className="text-gradient-v font-display text-3xl font-semibold leading-tight tracking-tight sm:text-5xl max-w-2xl mx-auto">
-              Build something people want. We'll notice.
+              Build something people want. We&apos;ll notice.
             </h2>
 
             <p className="mx-auto mt-5 max-w-lg text-lg text-muted">
@@ -83,25 +83,49 @@ export default function FinalCta() {
       <footer className="relative border-t border-line">
         <div className="mx-auto max-w-6xl px-5 pb-14">
           <div className="grid gap-10 border-t border-line pt-14 md:grid-cols-[1.4fr_1fr]">
-            
+
             <div className="max-w-sm text-left">
               <Logo />
 
               <p className="mt-4 font-serif text-lg italic leading-relaxed text-muted">
-                We invest in execution, not pedigree. Building the world's most meritocratic
+                We invest in execution, not pedigree. Building the world&apos;s most meritocratic
                 venture capital platform.
               </p>
 
-              {/* Social icons SAFE (no lucide issues) */}
+              {/* Social icons (inline SVG) */}
               <div className="mt-6 flex gap-2">
-                {["T", "L", "G"].map((label, i) => (
-                  <a
-                    key={i}
-                    href="#"
-                    aria-label="Social link"
+                {[
+                  {
+                    label: "X",
+                    href: "#",
+                    path: (
+                      <path d="M18.9 2.2h3.4l-7.4 8.5 8.7 11.1h-6.8l-5.3-6.9-6.1 6.9H1.9l7.9-9L1.5 2.2h7l4.8 6.3 5.6-6.3Zm-1.2 17.6h1.9L7.4 4.1H5.4l12.3 15.7Z" />
+                    ),
+                  },
+                  {
+                    label: "LinkedIn",
+                    href: "#",
+                    path: (
+                      <path d="M4.98 3.5a2.49 2.49 0 1 1 0 4.98 2.49 2.49 0 0 1 0-4.98ZM3 9.5h4v12H3v-12Zm6.5 0h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6v6.3h-4v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7h-4v-12Z" />
+                    ),
+                  },
+                  {
+                    label: "GitHub",
+                    href: "#",
+                    path: (
+                      <path d="M12 .8a11.2 11.2 0 0 0-3.5 21.8c.5.1.7-.2.7-.5v-2c-3.1.7-3.7-1.3-3.7-1.3-.5-1.3-1.2-1.6-1.2-1.6-1-.7 0-.7 0-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.4-2.5-.3-5-1.3-5-5.6 0-1.2.4-2.2 1.1-3-.1-.3-.5-1.5.1-3 0 0 .9-.3 3.1 1.1a10.6 10.6 0 0 1 5.6 0C17 5.5 18 5.8 18 5.8c.6 1.5.2 2.7.1 3 .7.8 1.1 1.8 1.1 3 0 4.3-2.6 5.3-5 5.6.4.3.7 1 .7 2v3c0 .3.2.6.7.5A11.2 11.2 0 0 0 12 .8Z" />
+                    ),
+                  },
+                ].map(({ label, href, path }) => (
+                  
+                    key={label}
+                    href={href}
+                    aria-label={label}
                     className="border border-line bg-zinc-900/40 backdrop-blur-sm grid size-10 place-items-center rounded-xl text-muted hover:text-fg transition-colors"
                   >
-                    <span className="text-xs font-medium">{label}</span>
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden>
+                      {path}
+                    </svg>
                   </a>
                 ))}
               </div>
