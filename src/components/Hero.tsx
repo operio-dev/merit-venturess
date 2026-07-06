@@ -78,7 +78,7 @@ export default function Hero() {
 </h1>
 
 <div className="mx-auto mt-8 max-w-xl space-y-1 font-serif text-lg italic text-muted sm:text-xl">
-  <p>We back founders through evidence of execution—not proximity, prestige, or introductions.</p>
+  <p>We back founders through evidence of execution. Not proximity, prestige, or introductions.</p>
   <p className="text-[#cfd6e2]">
   </p>
 </div>
