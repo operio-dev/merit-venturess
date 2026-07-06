@@ -34,6 +34,13 @@ const PRINCIPLES = [
   },
 ];
 
+function handleMove(e: React.MouseEvent<HTMLElement>) {
+  const el = e.currentTarget;
+  const rect = el.getBoundingClientRect();
+  el.style.setProperty("--mx", `${e.clientX - rect.left}px`);
+  el.style.setProperty("--my", `${e.clientY - rect.top}px`);
+}
+
 export default function Principles() {
   return (
     <section id="principles" className="relative py-28 md:py-36">
@@ -48,7 +55,10 @@ export default function Principles() {
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {PRINCIPLES.map(({ icon: Icon, title, text }, i) => (
             <Reveal key={title} delay={i * 70}>
-              <article className="card h-full p-8 transition-colors duration-300 hover:border-[rgba(76,141,255,0.35)]">
+              <article
+                onMouseMove={handleMove}
+                className="card card-spotlight h-full p-8 transition-colors duration-300 hover:border-[rgba(139,122,255,0.35)]"
+              >
                 <span className="icon-tile">
                   <Icon size={22} />
                 </span>
