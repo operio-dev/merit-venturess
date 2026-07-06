@@ -9,6 +9,8 @@ const LINKS = [
   { label: "FAQ", href: "#faq" },
 ];
 
+const Tag = "a";
+
 export function Logo() {
   return (
     <Tag href="#top" className="flex items-center">
