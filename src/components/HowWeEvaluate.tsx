@@ -43,38 +43,40 @@ const STEPS = [
 export default function HowWeEvaluate() {
   return (
     <section id="how-we-evaluate" className="relative py-28 md:py-36">
-      <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <Reveal>
-          <p className="eyebrow">How we evaluate</p>
-          <h2 className="display mt-5 max-w-3xl text-4xl text-[#e6ebf4] sm:text-5xl">
-            A process where data matters more than presentation.
-          </h2>
-        </Reveal>
+      <div className="mx-auto max-w-4xl px-5">
+        <div className="max-w-2xl">
+          <Reveal>
+            <p className="eyebrow">How we evaluate</p>
+            <h2 className="display mt-5 text-3xl text-[#e6ebf4] sm:text-4xl">
+              A process where data matters more than presentation.
+            </h2>
+          </Reveal>
+        </div>
 
-        <div className="relative mt-16 max-w-3xl">
+        <div className="relative mt-16">
           <div aria-hidden className="timeline-line" />
-          <ol className="space-y-12">
+          <ol className="space-y-8">
             {STEPS.map(({ icon: Icon, title, text, pills }, i) => (
               <li key={title}>
-                <Reveal delay={i * 80}>
-                  <div className="relative flex gap-7">
+                <Reveal delay={i * 60}>
+                  <div className="relative flex gap-5 sm:gap-7">
                     <span className="icon-tile relative z-10 shrink-0 bg-panel">
-                      <Icon size={22} />
+                      <Icon size={20} />
                     </span>
                     <div className="pt-1">
-                      <h3 className="font-display text-[20px] font-semibold text-fg">
-                        <span className="mr-3 text-[15px] font-semibold text-accent">
+                      <h3 className="font-display text-lg font-semibold text-fg sm:text-xl">
+                        <span className="mr-3 text-[14px] font-semibold text-accent">
                           {String(i + 1).padStart(2, "0")}
                         </span>
                         {title}
                       </h3>
-                      <p className="mt-2.5 text-[16px] leading-relaxed text-muted">{text}</p>
+                      <p className="mt-1.5 text-[15px] leading-relaxed text-muted">{text}</p>
                       {pills && (
-                        <div className="mt-5 flex flex-wrap gap-2.5">
+                        <div className="mt-4 flex flex-wrap gap-2">
                           {pills.map((p) => (
                             <span
                               key={p}
-                              className="rounded-full border border-line bg-panel/60 px-4 py-1.5 text-[13.5px] text-[#c4ccd9]"
+                              className="rounded-lg border border-line bg-panel/60 px-3 py-1.5 text-xs text-[#c4ccd9]"
                             >
                               {p}
                             </span>
