@@ -6,10 +6,13 @@ const Tag = "a";
 
 export function Logo() {
   return (
-    <Tag href="#top" className="flex items-center gap-2.5">
-      <span className="font-display text-[15px] font-semibold tracking-tight text-fg">
-        Merit Ventures
-      </span>
+    <Tag href="#top" className="flex items-center">
+      <img
+        src="/ChatGPT_Image_6_lug_2026__10_00_44-removebg-preview.png"
+        alt="Merit Ventures"
+        className="h-15 w-auto"
+        draggable={false}
+      />
     </Tag>
   );
 }
