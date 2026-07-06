@@ -3,7 +3,7 @@ import Reveal from "./Reveal";
 const STORIES = [
   {
     quote:
-      "I never worked at a big tech company and had no investor contacts. Merit looked at our retention curve and 2,000 paying users—and said yes in a week.",
+      "I never worked at a big tech company and had no investor contacts. Merit looked at our retention curve and 2,000 paying users and said yes in a week.",
     initials: "AO",
     name: "Amara Okafor",
     role: "Founder, Ledgerly",
