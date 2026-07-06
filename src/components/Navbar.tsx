@@ -11,14 +11,14 @@ const LINKS = [
 
 export function Logo() {
   return (
-    <a href="#top" className="flex items-center">
+    <Tag href="#top" className="flex items-center">
       <img
         src="/ChatGPT_Image_6_lug_2026__10_00_44-removebg-preview.png"
         alt="Merit Ventures"
-        className="h-7 w-auto sm:h-8"
+        className="h-8 w-auto"
         draggable={false}
       />
-    </a>
+    </Tag>
   );
 }
 
